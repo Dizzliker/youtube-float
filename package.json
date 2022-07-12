@@ -1,7 +1,7 @@
 {
-  "name": "electron-quick-start",
+  "name": "youtube-on-float-window",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "My app for watching youtube video always on top",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
@@ -14,7 +14,7 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
+  "author": "dizzliker",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^19.0.6"

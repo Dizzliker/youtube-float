@@ -3,17 +3,36 @@
   <head>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'"> -->
     <link href="./styles.css" rel="stylesheet">
-    <title>Hello World!</title>
+    <title>Youtube on float window</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
+    <div id="root">
+      <div class="menu">
+        <div class="action btn-move">
+          <img src="./images/hand.png" class="icon icon-hand"/>
+        </div>
+        <input type="text" class="main-input" onpaste="onPasted(this)" placeholder="Paste youtube url, please">
+
+        <div class="menu__actions">
+          <div class="menu__action btn-substract">
+            <img src="./images/substract.png" class="icon icon-substract"/>
+          </div>
+          <div class="menu__action btn-fullscreen">
+            <img src="./images/fullscreen.png" class="icon icon-fullscreen"/>
+          </div>
+          <div class="menu__action btn-close">
+            <img src="./images/close.png" class="icon icon-close"/>
+          </div>
+        </div>
+      </div>
+
+      <iframe id="iframe" class="hide" width="100%" height="100%" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
 
     <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
+    <script src="./renderer.js" defer></script>
   </body>
 </html>
