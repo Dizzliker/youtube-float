@@ -26,10 +26,6 @@ btnSubsctract.addEventListener('click', () => ipc.send('minimize'));
 changeFullscreen = () => {
     fullscreen = !fullscreen;
 }
-console.log('asfasf');
-iframe.addEventListener('mouseenter', (e) => {
-    // console.log(e.target.className == 'ytp-suggestion-link');
-});
 
 container.addEventListener('mouseenter', () => {
     if (fullscreen) {
@@ -71,8 +67,10 @@ onPasted = (e) => {
         const text = e.value.trim();
         if (text) {
             const videoId = getVideoId(text);
-            scrollMenuToTop();
-            changeFullscreen();
+            if (!fullscreen) {
+                scrollMenuToTop();
+                changeFullscreen();
+            }
             iframe.classList.remove('hide');
             iframe.src = `https://www.youtube.com/embed/${videoId}?rel=`;
         }
